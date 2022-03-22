@@ -1,0 +1,18 @@
+:root {
+  --border: solid thin rgb(177, 177, 177);
+}
+
+#sketch{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    border-left: var(--border);
+    border-bottom: var(--border);
+    height: 70vh;
+    max-width: 70vh;
+}
+
+.item{
+    border-right: var(--border);
+    border-top: var(--border);
+}
