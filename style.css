@@ -2,17 +2,47 @@
   --border: solid thin rgb(177, 177, 177);
 }
 
+body{
+    background-color: rgb(64, 65, 65);
+}
+.container{
+    margin: 0 auto;
+    width: 700px; 
+}
+#header {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
 #sketch{
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     border-left: var(--border);
     border-bottom: var(--border);
     height: 70vh;
     max-width: 70vh;
+    background-color: white;
 }
 
 .item{
     border-right: var(--border);
     border-top: var(--border);
+
+}
+
+button{
+    background-color: aqua;
+    margin: 0.5em;
+    padding: 0.5em 1.5em;
+}
+
+.active{
+    background-color: blueviolet;
+}
+input{
+    margin: 0.5em;
+    padding: 0;
+    border: 3;
+    border-radius: 60px;
 }
