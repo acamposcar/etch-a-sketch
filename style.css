@@ -7,6 +7,7 @@
 	--background-color-dark: #1b1e1e;
 	--text-color-dark: #a09696;
 	--sketch-color-dark: #141616;
+	--primary-color:rgb(181, 135, 224);
 }
 
 body {
@@ -99,7 +100,7 @@ button {
 
 button:hover,
 .active {
-	background-color: rgb(181, 135, 224);
+	background-color: var(--primary-color);
 	color: black;
 }
 
@@ -152,7 +153,7 @@ input[type='range']::-webkit-slider-thumb {
   height: 20px;
   border-radius: 16px;
   margin-top: -5px;
-  background: var(--text-color);
+  background: var(--primary-color);
 }
 
 #moon {
@@ -179,7 +180,7 @@ button.dark {
 
 button.dark:hover,
 button.dark.active {
-	background-color: rgb(181, 135, 224);
+	background-color: var(--primary-color);
 	color: black;
 }
 
@@ -189,6 +190,10 @@ input[type="color"].dark {
 
 input[type='range'].dark {
 	background-color: var(--sketch-color-dark);
+}
+
+input[type='range'].dark::-webkit-slider-runnable-track {
+  background-color: var(--sketch-color-dark);
 }
 
 #moon.dark {
