@@ -162,6 +162,10 @@ input[type="color"].dark {
 	background-color: var(--background-color-dark);
 }
 
+input[type='range'].dark {
+	background-color: var(--sketch-color-dark);
+}
+
 #moon.dark {
 	fill: var(--text-color-dark);
 }

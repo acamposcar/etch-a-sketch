@@ -16,6 +16,7 @@ function darkMode() {
   document.querySelector('#moon').classList.toggle('dark');
   document.querySelector('.item').classList.toggle('dark');
   document.querySelector('input[type="color"]').classList.toggle('dark');
+  document.querySelector('input[type="range"]').classList.toggle('dark');
   document.querySelectorAll('button').forEach((button) => {
     button.classList.toggle('dark');
   });
