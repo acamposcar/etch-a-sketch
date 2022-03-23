@@ -1,196 +1,193 @@
 :root {
-  --border: solid thin rgb(105, 105, 105);
-  --background-color: #dbdbdb;
-  --text-color: #4b4b4b;
-  --sketch-color: #f1f1f1;
-
-
-  --border-dark: solid thin rgb(44, 44, 44);
-  --background-color-dark: #1b1e1e;
-  --text-color-dark: #a09696;
-  --sketch-color-dark: #141616;
+	--border: solid thin rgb(105, 105, 105);
+	--background-color: #dbdbdb;
+	--text-color: #4b4b4b;
+	--sketch-color: #f1f1f1;
+	--border-dark: solid thin rgb(44, 44, 44);
+	--background-color-dark: #1b1e1e;
+	--text-color-dark: #a09696;
+	--sketch-color-dark: #141616;
 }
 
-
-
-body{
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-.container{
-    margin: 0 auto;
-    max-width: 700px; 
-    padding: 5px;
+body {
+	background-color: var(--background-color);
+	color: var(--text-color);
 }
 
-#header{
-    display: flex;
-    justify-content: center;
+.container {
+	margin: 0 auto;
+	max-width: 700px;
+	padding: 5px;
 }
 
-h1{
-    color:rgb(160, 92, 224);
-    font-family: 'Bungee', monospace;
-    font-size: 55px;
-    margin-top: -25px;
-    margin-bottom: -10px;
+#header {
+	display: flex;
+	justify-content: center;
 }
 
-#main{
-    display: flex;
-    flex-direction: row-reverse;
-    }
+h1 {
+	color: rgb(160, 92, 224);
+	font-family: 'Bungee', monospace;
+	font-size: 55px;
+	margin-top: -25px;
+	margin-bottom: -10px;
+}
+
+#main {
+	display: flex;
+	flex-direction: row-reverse;
+}
 
 #mode-selection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 1.5em;
-    align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 1.5em;
+	align-items: flex-end;
 }
 
 #grid-selection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2em;
-    text-align: center;
-    gap: 5px;
-    margin-top: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2em;
+	text-align: center;
+	gap: 5px;
+	margin-top: 2em;
 }
 
-#sketch{
-    flex: 1;
-    margin: 0 auto;
-    display: grid;
-    border-left: var(--border);
-    border-bottom: var(--border);
-    height: 70vh;
-    max-width: 80vh;
-    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    margin-bottom: 1em;
+#sketch {
+	flex: 1;
+	margin: 0 auto;
+	display: grid;
+	border-left: var(--border);
+	border-bottom: var(--border);
+	height: 70vh;
+	max-width: 80vh;
+	box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+	margin-bottom: 1em;
 }
 
-.item{
-    border-right: var(--border);
-    border-top: var(--border);
-
+.item {
+	border-right: var(--border);
+	border-top: var(--border);
 }
 
-button{
-    background-color: var(--sketch-color);
-    color: var(--text-color);
-    margin: 0.5em;
-    height: 40px;
-    width: 120px;
-    cursor: pointer;
-    border-width: thin;
-    border-radius: 0.75em;
-    border-color: var(--text-color);
-    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+button {
+	background-color: var(--sketch-color);
+	color: var(--text-color);
+	margin: 0.5em;
+	height: 40px;
+	width: 120px;
+	cursor: pointer;
+	border-width: thin;
+	border-radius: 0.75em;
+	border-color: var(--text-color);
+	box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
-button:hover, .active{
-    background-color: rgb(181, 135, 224);
-    color: black;
+button:hover,
+.active {
+	background-color: rgb(181, 135, 224);
+	color: black;
 }
 
-input[type="color"]{
-    position: relative;
-    left: -2px;
-    bottom: 5px;
-    width: 15px;
-    height: 15px;
-    border: none;
-    background-color: var(--background-color);
+input[type="color"] {
+	position: relative;
+	left: -2px;
+	bottom: 5px;
+	width: 15px;
+	height: 15px;
+	border: none;
+	background-color: var(--background-color);
 }
 
 input[type=color]::-webkit-color-swatch {
-  border: none;
-  border-radius: 50%;
-  padding: 0;
+	border: none;
+	border-radius: 50%;
+	padding: 0;
 }
 
 input[type=color]::-webkit-color-swatch-wrapper {
-    border: none;
-    border-radius: 50%;
-    padding: 0;
+	border: none;
+	border-radius: 50%;
+	padding: 0;
 }
 
-input{
-    cursor: pointer;
+input {
+	cursor: pointer;
 }
 
 input[type='range'] {
-  -webkit-appearance: none;
-  background-color: var(--sketch-color);
-  height: 10px;
-  width: 100px;
-  border: solid;
-    border-width: thin;
-    border-radius: 0.75em;
-    border-color: var(--text-color);
+	-webkit-appearance: none;
+	background-color: var(--sketch-color);
+	height: 10px;
+	width: 100px;
+	border: solid;
+	border-width: thin;
+	border-radius: 0.75em;
+	border-color: var(--text-color);
 }
 
-#moon{
-    fill: var(--text-color);
+#moon {
+	fill: var(--text-color);
 }
+
 
 /* DARK MODE */
 
-body.dark{
-    background-color: var(--background-color-dark);
-    color: var(--text-color-dark);
-}
-#sketch{
- box-shadow: rgba(167, 167, 167, 0.24) 0px 3px 8px;
+body.dark {
+	background-color: var(--background-color-dark);
+	color: var(--text-color-dark);
 }
 
-
-button.dark{
-    background-color: var(--sketch-color-dark);
-    color: var(--text-color-dark);
-    border-color: var(--text-color-dark);
+#sketch {
+	box-shadow: rgba(167, 167, 167, 0.24) 0px 3px 8px;
 }
 
-button.dark:hover, button.dark.active{
-    background-color: rgb(181, 135, 224);
-    color: black;
+button.dark {
+	background-color: var(--sketch-color-dark);
+	color: var(--text-color-dark);
+	border-color: var(--text-color-dark);
 }
 
-input[type="color"].dark{
-    background-color: var(--background-color-dark);
+button.dark:hover,
+button.dark.active {
+	background-color: rgb(181, 135, 224);
+	color: black;
 }
 
-#moon.dark{
-    fill: var(--text-color-dark);
+input[type="color"].dark {
+	background-color: var(--background-color-dark);
 }
 
+#moon.dark {
+	fill: var(--text-color-dark);
+}
+
+/* RESPONSIVE */
 @media only screen and (max-width: 700px) {
-  h1{
-    
-    font-size: 35px;
-
-    }
-    button{
-        width: 80px;
-    }
-    #main{
-        display: block;
-    }
-    #mode-selection {
-    flex-direction: row;
-        align-items: flex-start;
-        margin-top: 1em;
+	h1 {
+		font-size: 35px;
+	}
+	button {
+		width: 80px;
+	}
+	#main {
+		display: block;
+	}
+	#mode-selection {
+		flex-direction: row;
+		align-items: flex-start;
+		margin-top: 1em;
+	}
+	#sketch {
+		height: 60vh;
+		max-width: 70vh;
+	}
+	#grid-selection {
+		flex-direction: row;
+		margin-top: 0em;
+	}
 }
-    #sketch{
-        height: 60vh;
-    max-width: 70vh;
-}
-#grid-selection {
-    flex-direction: row;
-    margin-top: 0em;
-}
-}
-
