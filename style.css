@@ -12,6 +12,7 @@
 body {
 	background-color: var(--background-color);
 	color: var(--text-color);
+	font-family: monospace;
 }
 
 .container {
@@ -79,6 +80,10 @@ h1 {
 	border-top: var(--border);
 }
 
+#dark{
+		margin-top: 3em;
+	}
+
 button {
 	background-color: var(--sketch-color);
 	color: var(--text-color);
@@ -128,11 +133,26 @@ input[type='range'] {
 	-webkit-appearance: none;
 	background-color: var(--sketch-color);
 	height: 10px;
-	width: 100px;
+	width: 120px;
 	border: solid;
 	border-width: thin;
 	border-radius: 0.75em;
 	border-color: var(--text-color);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 25px;
+  background-color: var(--sketch-color);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 16px;
+  margin-top: -5px;
+  background: var(--text-color);
 }
 
 #moon {
@@ -190,6 +210,7 @@ input[type='range'].dark {
 		flex-direction: row;
 		align-items: flex-start;
 		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 	#sketch {
 		height: 60vh;
@@ -201,5 +222,9 @@ input[type='range'].dark {
 	}
 	#options{
 		margin-right: 0em;
+	}
+	#dark{
+		margin-left: 3em;
+		margin-top: 0em;
 	}
 }
