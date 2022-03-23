@@ -6,26 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Etch a Sketch</title>
 </head>
 
 <body>
     <div class="container">
-
         <div id="header">
-
-            <input type="color" id="color-mode">
-            <div>
-                <input type="range" min="0" max="4" value="2" id="grid-slider">
-                <p id="grid-size"></p>
-            </div>
-            <button id="rainbow-mode">Rainbow Mode</button>
-            <button id="erase-mode">Erase</button>
-            <button id="clear">Clear</button>
+            <h1>Etch a sketch</h1>
         </div>
-        <div id="sketch">
+        <div id="main">
+            <div id="sketch">
 
+            </div>
+            <div class="options">
+                <div id="mode-selection">
+
+                    <div>
+                        <button id="color-mode" class="active">Color Mode</button>
+                        <div>
+                            <input type="color" id="color-picker" value="#c72e2e">
+                        </div>
+                    </div>
+
+                    <button id="rainbow-mode">Rainbow Mode</button>
+                    <button id="erase-mode">Erase</button>
+                    <button id="clear">Clear</button>
+
+                </div>
+
+                <div id="grid-selection">
+                    <input type="range" min="0" max="4" value="2" id="grid-slider">
+                    <span id="grid-size"></span>
+                    <button id="dark">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                            height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                            <rect fill="none" height="24" width="24" />
+                            <path
+                                d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
         </div>
 
     </div>
