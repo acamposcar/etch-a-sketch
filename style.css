@@ -25,6 +25,10 @@ body {
 	justify-content: center;
 }
 
+#options{
+	margin-right: 2em;
+}
+
 h1 {
 	color: rgb(160, 92, 224);
 	font-family: 'Bungee', monospace;
@@ -44,7 +48,7 @@ h1 {
 	justify-content: center;
 	margin-top: 2.5em;
 	align-items: flex-end;
-	margin-right: 2em;
+
 }
 
 #grid-selection {
@@ -194,5 +198,8 @@ input[type='range'].dark {
 	#grid-selection {
 		flex-direction: row;
 		margin-top: 0em;
+	}
+	#options{
+		margin-right: 0em;
 	}
 }
