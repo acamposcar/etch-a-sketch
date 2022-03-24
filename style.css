@@ -196,6 +196,10 @@ input[type='range'].dark::-webkit-slider-runnable-track {
   background-color: var(--sketch-color-dark);
 }
 
+button.dark:hover > #moon.dark {
+    fill: black;
+}
+
 #moon.dark {
 	fill: var(--text-color-dark);
 }
