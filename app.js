@@ -71,6 +71,10 @@ function createGrid() {
         square.style.backgroundColor = getColor();
       }
     });
+    // Add mousedown listener to support phones
+    square.addEventListener('mousedown', () => {
+      square.style.backgroundColor = getColor();
+    });
   }
   clear();
 }
