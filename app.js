@@ -2,11 +2,17 @@
 /* eslint-disable no-plusplus */
 // ts-check
 
-// Global variable
+// Global variable, initial values
 let mode = 'color';
-// const sketchColor = 'rgb(226, 226, 226)';
+let clicked = false;
 let sketchColor = '#f1f1f1';
 let darkEnabled = false;
+
+function clear() {
+  document.querySelectorAll('.item').forEach((item) => {
+    item.style.backgroundColor = sketchColor;
+  });
+}
 
 function darkMode() {
   darkEnabled = !darkEnabled;
@@ -24,41 +30,49 @@ function darkMode() {
   clear();
 }
 
-function colorMode() {
-  /* Users selects color in the color picker */
-  const color = document.querySelector('#color-picker').value;
-  return color;
-}
-
-function rainbowMode() {
-  /* Generates a random color in HSL */
-  const hue = Math.floor(Math.random() * 360);
-  const color = `hsl(${hue}, 100%, 50%)`;
-  return color;
-}
-
-function erase() {
-  /* Same color as background */
-  return sketchColor;
-}
-
-function clear() {
-  document.querySelectorAll('.item').forEach((item) => {
-    item.style.backgroundColor = sketchColor;
-  });
-}
-
-function selectMode() {
+function getColor() {
   switch (mode) {
     case 'color':
-      return colorMode();
-    case 'rainbow':
-      return rainbowMode();
+      /* Users selects color in the color picker */
+      return document.querySelector('#color-picker').value;
+    case 'rainbow': {
+      /* Generates a random color in HSL */
+      const hue = Math.floor(Math.random() * 360);
+      return `hsl(${hue}, 100%, 50%)`;
+    }
     case 'erase':
-      return erase();
+      /* Same color as background */
+      return sketchColor;
     default:
-      return colorMode();
+      return document.querySelector('#color-picker').value;
   }
+}
+
+function getGridSize() {
+  const gridOptions = [10, 16, 32, 64, 96];
+  const gridSliderValue = document.querySelector('#grid-slider').value;
+  const gridSize = gridOptions[gridSliderValue];
+  document.querySelector('#grid-size').textContent = `${gridSize} x ${gridSize}`;
+  return gridSize;
+}
+
+function createGrid() {
+  const size = getGridSize();
+  const sketch = document.querySelector('#sketch');
+  sketch.innerHTML = '';
+  sketch.style.cssText = `grid-template-columns: repeat(${size}, 1fr); `;
+
+  for (let i = 0; i < size * size; i++) {
+    const square = document.createElement('div');
+    square.classList.add('item');
+    sketch.appendChild(square);
+    square.addEventListener('mouseenter', () => {
+      if (clicked) {
+        square.style.backgroundColor = getColor();
+      }
+    });
+  }
+  clear();
 }
 
 function buttonListeners() {
@@ -96,34 +110,14 @@ function buttonListeners() {
   clearButton.addEventListener('click', clear);
   gridSlider.addEventListener('input', createGrid);
   darkButton.addEventListener('click', darkMode);
-}
 
-function getGridSize() {
-  const gridOptions = [10, 16, 32, 64, 96];
-  const gridSliderValue = document.querySelector('#grid-slider').value;
-  const gridSize = gridOptions[gridSliderValue];
-  document.querySelector('#grid-size').textContent = `${gridSize} x ${gridSize}`;
-  return gridSize;
-}
+  document.addEventListener('mousedown', () => {
+    clicked = true;
+  });
 
-function createGrid() {
-  const size = getGridSize();
-  const sketch = document.querySelector('#sketch');
-  sketch.innerHTML = '';
-  sketch.style.cssText = `grid-template-columns: repeat(${size}, 1fr); `;
-
-  for (let i = 0; i < size * size; i++) {
-    const square = document.createElement('div');
-    square.classList.add('item');
-    sketch.appendChild(square);
-    square.addEventListener('mouseover', () => {
-      square.style.backgroundColor = selectMode();
-    });
-    square.addEventListener('mousedown', () => {
-      square.style.backgroundColor = selectMode();
-    });
-  }
-  clear();
+  document.addEventListener('mouseup', () => {
+    clicked = false;
+  });
 }
 
 // Initiate all
